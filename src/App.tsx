@@ -1,6 +1,8 @@
 import React from 'react';
 import './App.css';
 import Content from "./components/Content";
+import Header from './components/Header/Header';
+import Background from './components/Background/Background';
 
 function App() {
 
@@ -58,6 +60,8 @@ function App() {
 
   return (
     <div className="App">
+      <Header />
+      <Background />
       <header className="App-header">
         <Content contentTitle={"매주 공개! 이건 꼭 봐야돼!!"} content={weeklyReleaseURLList} />
         <Content contentTitle={"평단의 찬사! 로맨틱한 한국 시리즈"} content={romanticKoreanSeriesURLLIST} />
