@@ -1,0 +1,132 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.2rem;
+}
+
+.header-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 3rem;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000; /*header을 background보다 위로!!*/
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    margin-right: 5rem;
+}
+
+.header-logo {
+    height: 40px;
+    margin-right: 2rem;
+}
+
+.header-nav ul {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.header-nav li {
+    color: white;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.search-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-icon {
+    font-size: 1.3rem;
+    color: white;
+    cursor: pointer;
+}
+
+.search-icon:hover {
+    opacity: 0.8;
+}
+
+.search-bar {
+    position: absolute;
+    right: 30px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 1px solid #555;
+    border-radius: 4px;
+    padding: 6px 10px;
+    color: white;
+    font-size: 0.9rem;
+    width: 160px;
+}
+
+.profile-wrapper {
+    position: relative;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+.profile-icon {
+    width: 32px;
+    height: 32px;
+    color: white !important;
+    fill: white !important;
+    display: block !important;
+}
+
+.profile-icon:hover {
+    opacity: 0.8;
+}
+
+.profile-dropdown {
+    position: absolute;
+    top: 35px;
+    right: 0;
+    background-color: black;
+    border: 1px solid #333;
+    padding: 0.5rem 1rem;
+    display: none;
+    flex-direction: column;
+    gap: 0.3rem;
+    min-width: 150px;
+    z-index: 2000; /*헤더보다 높게 설정해서 보이도록!!!*/
+}
+
+.profile-dropdown p {
+    color: #e5e5e5;
+    margin: 0;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.profile-dropdown p:hover {
+    color: #ffffff;
+}
+
+.profile-wrapper:hover .profile-dropdown {
+    display: flex;
+}
+
