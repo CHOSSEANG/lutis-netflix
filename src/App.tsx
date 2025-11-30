@@ -1,11 +1,10 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Content from "./components/Content";
 
 function App() {
 
-  const weeklyReleaseURLList = [
+    const weeklyReleaseURLList = [
     "https://occ-0-8123-325.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABefsG2EDUvvyQtMFAgtSMWOtuqmKTtkltTciUpulyBsNsLrZlqGpBC2PwgWBFodpo3E76cXyOdw5NNtd6MPB3pJiJQwAXPLl1B4xOAn897uOGmEfuy7jRk68JiOi0p6ZngWfEIMG_e73368TMxrJHjsos2NLx4-jumVTBCUrv5OXqkElX1R-Q3iB2dK7tEf9BdQEjgaajQXytfsVkOU0vUA6UcKJd4nCI6Vce-azwQ.webp?r=d88",
     "https://occ-0-8123-325.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABWcvvbGDjRlxkEuhxJvBIoZ7l6byt62rBhCC1XSNVWGBZYzhmk6ve-yWOtgeyZppHIjr3yKbIN6D2OuC0sTkh0oCMUbqqVJBhlbbKBBMuFbD8YDI6t4DeJsihVjkaHmhMUbdlFyFm6l153Do9r3S71z33o8rmtBZwuxngL8ZGpQuQyleaZwnzD2ORCCkdwIwnkVYhxAX55Pdy8k-rifdR0HUXUsb0H38ZLQJXy69DoSMuI0YzqBVnlmBnr56tyIRzxTx0XGvvp1PJO_XxB_1zvK4EPAelMyqwMeaMaz6EtswhpWzv7WlbPWkkORxBFoEmhIJWWl48PIeqJ5adt02xbIC2CFM-btiZSfrDQBRlpNAK6iyGfmcrKdQuuGXojLrVNxVu6oUStUTCSRwBjA.jpg?r=633",
     "https://occ-0-8123-325.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABZLcZl3jOW-r9UgB-uyVFmDB7UxKlCFWz_zss7aFcvMwv_rOPnjyaa9TphHL-ISnTLx-lGvCy_5emVF39lB-t0eNlAtoQoE9-dkT6BkoonO7vCRPygOuGrcaJ3td3dz1Sp7IhBScumwy9m3lO8hNTio3A4RP373sBsnKPNdES8FxX2C_AYm45PcQFxE_t0Gi1bKIKN29_BVEuHSPPWB9sWmsOInD65khc4xVGA2YW0f7uWhBYEZrIOe9kD_QGwrnbngMJITJWjz_P8VS_pVWbEnzmq-HXaaA4hkIWFxpRH_yFLX1XIPy120HiWSQKPTrdw6s4KxPEMr46xk_Ei7EyywdrgBhftsY8vgDgDY479RzWsaDbdYKbuNttWoqF26OsYM6dvSdY-K67D3ItxE.webp?r=177",
@@ -18,22 +17,52 @@ function App() {
     "https://occ-0-8123-325.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABfsUmENx_G5IpyoHyyWTXHB3PaEjw2_B2yNI5X5eTLP74RKoAdXy4DU3wgjdybNOuQs9PE3dwoNFGzEtbK3Xbnu7o_LkcikVOsfGBt9IR9p-2WvkPUU-DyV_Ydx3zIgisCq-ymhguN-Dsrr3VW4p2RWjBufWvWj25QzEt_zMHOXnT818frEqHlPyj8s2AL0SaYAyARY9MfQx20czRJ4NN2DHkxoQM7sVEfXJNMfzWF8786ND73FXQXf219QVuWjdwPGZHJITBdiewfYJNmWbTOViBtUH6ED9WWP8SFFIpDnG8uPyYLwr9W21Hz3WPwK6Ko-yaFF4fv4w8ZB3pZVUiCsv.webp?r=323"
   ]
 
+    const romanticKoreanSeriesURLLIST=[
+      "https://occ-0-8123-325.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABX4iKP5FKaiEWOOtQPTjWxAdL_hGJLktMxCQ3iEKFQHnXZxWjo79GNE7f3STxZufRlhzwxqaHM_PEaLHUr-3ibgsnNWfwFXcTwk.jpg?r=70e",
+      "https://occ-0-8123-325.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABerE5Vn9boFlZ_wL0CU0FB1icRwzzyKQxWpVG6AhiNYsRU3VUyTmhIsppZCmqKAa2GxQhy6O3X-yt7JrFME8Ew7CwengNYhrRuA.jpg?r=c46",
+      "https://occ-0-8123-325.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABUpkuIOBt94F5GbveJxgbniP2l1Kgm-J6pOX8j0NnZSt0W5ounXPiekKmfTC2zd_qEGkRD7QUsE_kbHG2B1vKr3itIveYoQ6urw.webp?r=f58",
+      "https://occ-0-8123-325.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABY5ISI8rpQjX8l9FjNgUJN-GinY_zd2XNEMlsQR6GN6BJ10uY_y3RtvOJQGqYdm-VXotwMerBk7nZ72EE-mek6otfwVMGNHQREM.webp?r=754",
+      "https://occ-0-8123-325.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABdKo4FaYljZ8-vkmOOToai5hQwB2rpM_KL4qdjyq02aNqkiG2c_805yUh01RK1SrXtVaf3eu7Y399wNPh4sP8pAc399-aQdd8p0.webp?r=117",
+      "https://occ-0-8123-325.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABSn-HDdYIG5q-C12VapyKbc3RHnBxuhu92hxCOetaD0RJo8Fu_wYoPkGo4VHXKx9e9YY5SN3f4fQIpU6QBcFZTQpojFOkImHYJs.webp?r=491",
+      "https://occ-0-8123-325.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABb-OCobQ3YIDPyihVxhL6vzL_6AUThJd0VgGetzIPWnTN7J2juNOPbS52cOcehdKDrXPv_q97h2YbV9OBv683bcpXedRPN4A36Y.webp?r=6f5",
+      "https://occ-0-8123-325.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABYfFGQf80ynD96eIdOLuOj5Gf9ZWLMT334dgWU6Ho74RO7izYYRLnfRmGu2hYwLQ3ZI3V3KyvrxztmrtL5x3mQPKPpfBQo1VMS4.webp?r=c63",
+      "https://occ-0-8123-325.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABdDMEuCL3fiTbKt77NKYCI1yMy_pBNaqiZyjVJwQhCsaiLzbXijsgVxriDcNbU5ap4uW4vjX6m0hwWw7tQ9wHDUa_oAOETRuVCc.webp?r=352",
+      "https://occ-0-8123-325.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABQ-620rn4qc0tnZRDmNL5tzdJpacOSKcdX7dgwvnYPYzp1VaJVtb_i4yhsHwcos4FAoOA9j_a35ozqKDQHooZEKAq6sCtqSJJ3U.webp?r=d9d"
+  ]
+
+    const loveIsKContentURLList = [
+        "https://occ-0-8123-325.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABcOFu3xh2r5bQnmI9hiceBKquU1dbv9YL0QsvcJuCNdShPg0JGnD-Wtc9mT-jAYmc2i4cMOSLSauZfaATxWoIKbv9aeh91s__Ko.jpg?r=571",
+        "https://occ-0-8123-325.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABZDFt0APrsHdkOOdu9j8hOZD2E1UTIIg0KaUvSXVfcm2bEfNeoENi-hpDEConGU1Ab2rdQTFe4u3Rxk8LhxQ3q_VgjQCNUwkQdo.jpg?r=219",
+        "https://occ-0-8123-325.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABRwtJrhzU8q63cDEjryWXWTZmcO8B5mtura_TJBV-3zy1zvUKpnn8IvdoD9ryUx8vSO2pc2kFgN6X8mcwzB-30OdqyBELs4JP5I.webp?r=377",
+        "https://occ-0-8123-325.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABbQvJtpMEmDbXNGvSN1RAkdQQitH6lsKSM7mBihLJGEVgtl9BbrgE43JGqGfVvGzDvfp7BIAQfh0RgJ_re2lIp5mMvoAdWPVOQ8.webp?r=ec6",
+        "https://occ-0-8123-325.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABdwU9TpVoL0jyXGGpjYHzekIs9Z2OA9ld-wdgOPImM0DBQNLhlFZznvyigB_CIrVIAyOuRmSpfXKvgkN0jKh297M4n8fzN3egPWihe96juQSaxtUgIO4gNUGnbZv144T8Uhoku4Utyzfi0UhiLpKVgcDwE2yW43nBo9aBvJZiP38484rrwx32CiDf7Eenx-6OFExoumWDhYcASDWH-dwtnghCX0OIo3L7U60kQ.webp?r=bdf",
+        "https://occ-0-8123-325.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABXqskMUromuejMkcquhUMobg11djMDjvRNgt9y_Wih2tmzJEvrjlciGZzIz27AT3MarWP_ZVY1JZkCqcVJHt9nEq-hN3D2IZEYw.jpg?r=bfb",
+        "https://occ-0-8123-325.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABUpkuIOBt94F5GbveJxgbniP2l1Kgm-J6pOX8j0NnZSt0W5ounXPiekKmfTC2zd_qEGkRD7QUsE_kbHG2B1vKr3itIveYoQ6urw.webp?r=f58",
+        "https://occ-0-8123-325.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABdKo4FaYljZ8-vkmOOToai5hQwB2rpM_KL4qdjyq02aNqkiG2c_805yUh01RK1SrXtVaf3eu7Y399wNPh4sP8pAc399-aQdd8p0.webp?r=117",
+        "https://occ-0-8123-325.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABZmYEZEKL0yFiZ8KHDLtJxbZq1DwLpD7HEfFLSMVUoL84kFNREgIsCox7kqeDewjLarVU-vnY2I-Qnbxv1PABw_nRVKCtyiJpp8.webp?r=3a3",
+        "https://occ-0-8123-325.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABe-QDGYDrKNTbaYxgbz2snd-NBTZK_iDcM3RuGij0m3i36x6D9szH-rE93dM7iFzDlyREliIUJwEXdSuFFYVuquP2_p_XqTLNTM.webp?r=e1b"
+    ]
+
+    const japanMovieAndSeriesURLList = [
+        "https://occ-0-8123-325.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABdCDGNyBx2ZkSs4GXFcvPwEu1YoqTUiiY7CN_uivycxteKYWvGV_dxOa4IpTiwQroFeAIsqUKnwABYFpFm7O2qUvQWwIVnQ1Er8.webp?r=d1e",
+        "https://occ-0-8123-325.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABZntp9Ec41ULX19CMBgQnE6kcxM6MaY8u-JTpctjbfIyD8-UpFZALzYQZ2xcDlm3KtyhfAc1dqDqWpQ3Yuc-DBtpyO69ZWJ2rKE.webp?r=5c5",
+        "https://occ-0-8123-325.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABdJR2odTZeFJb0aS1SqYMC2n1qv948ksMI3EQSC1FH_CEAwsw4WwTccQTocya_cfJ0J5j0PiDTv2FFTSvkjZy1Hkezs61YunS_0ZYf0qudbRXEFbhOo0SfqskYMtDtShhL0_eQkmJ3zfEAH3Lr0f8Q0gtXqFB-YPuojLkkHffXXgJCnfyktn9JA-aXbYTcv99Akrz39miVwoDanaagVIbwyODqoJVIRGMj-g1dutp8U8eFzIL4lkDc8IAhw7gyHBCMBcJA3rFsaRjIUYJ8snarAOW4YtijCa_0Ix9RlXNgnFA_pkERHMojALIrTM-Ev5TLGWBrNQUrPGmX-foDyg5nth.webp?r=30e",
+        "https://occ-0-8123-325.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABRZlOCNmbNLdr6XfLhFuBgZxniONwk8k0I0gB0klNQW6FrPrzk3C7E_GTQxIg2feYx_8pDIePzriR-fy7scSFs5hjREh6InwhOAATJdGQK7zjDmPCIgwhB9CRMGWYTZgJw_rLffJSGIYQ4y5D4SAdlMPRF_NTBLAtbXnkVt2sVKZqxxVU14NHtNhXQ2aFiYeAZpX8rlapIMGpgqJDpWoKfnFXJpIxPkO78uIARDVSazg7Pk9SQTlXI6MexPhkwAmNEI8jN3cfboXozw6zTy7YCeBChaZ6Z2qs1fiFMQ4Q6u09m36ob6Ef3rXpS-fhuUcXM7k2bis81Eqz8inSJjiUPUx.webp?r=aaa",
+        "https://occ-0-8123-325.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABbOT4wz3BrX_OFzBnIp6QYgu_G_x_xwxQncptwBLtCY6ivTRrhNaaPEZwAhC4qWRJzPhQMKwZf2pxzA_ovfvorddb-iY6r-uyGQ.webp?r=c70",
+        "https://occ-0-8123-325.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABd39JiV1vMPVpXa-eoWRjsHDlyow-JbELB448elQeGJUTN3rHNiufUVu_wme3VZBQbieeKtdw_mR5xa4uD10Kf1ISzJ-cU8m3RU.webp?r=80a",
+        "https://occ-0-8123-325.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABYmLJ-COS5bv06bDWxPe81DldyezXR99-1RBK-lVkdpb1tfjnYgAncPt0D3FvEr4y5h9CPCo765wsOrAjtqoP8f8QbDd63yxZs8.webp?r=9e5",
+        "https://occ-0-8123-325.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABXLZNgUOwj93S2M41gDiLcrMZwaASsmSx8JEBuEPmY1BVIJMQTY2nURQrkC2JIy4XIXXHAUe0GhTf1Vv0OBTHIrBx-Yo6QkNLCA.webp?r=102",
+        "https://occ-0-8123-325.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABQtV51Ujdgrd0rJvx07icMdLQOyC4RTBxkWLP4mHFxHoPLmeeHuXt63HNW9NYRmGWnDwO_z-kUPdHZcBBHC8WUN_A2R2PuSQRjo.webp?r=ee5",
+        "https://occ-0-8123-325.1.nflxso.net/dnm/api/v6/Qs00mKCpRvrkl3HZAN5KwEL1kpE/AAAABTMO-SxBoID7aNwvOnJB52cjheghZ53vye0hSDZucA-ZPzQJhhj4tRpyInROIagP3sicIdsjSKHjAAg6B3BDSVPo7mCrwXHkpII.jpg?r=e56"
+    ]
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
         <Content contentTitle={"매주 공개! 이건 꼭 봐야돼!!"} content={weeklyReleaseURLList} />
+        <Content contentTitle={"평단의 찬사! 로맨틱한 한국 시리즈"} content={romanticKoreanSeriesURLLIST} />
+        <Content contentTitle={"사랑은 K-컨텐츠를 타고"} content={loveIsKContentURLList} />
+        <Content contentTitle={"일본의 영화&시리즈"} content={japanMovieAndSeriesURLList} />
       </header>
     </div>
   );
